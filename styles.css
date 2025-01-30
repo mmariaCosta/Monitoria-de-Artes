@@ -244,17 +244,11 @@ table tbody td {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 1px 10px 17px rgba(0, 0, 0, 0.3);
 }
-footer {
-    background-color: #34495e; /* Azul escuro */
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-}
-
 .footer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -267,12 +261,13 @@ footer {
 
 .footer-link {
     text-decoration: none;
-    color: #ffffff;
     font-size: 18px;
     display: flex;
     align-items: center;
     gap: 8px;
     transition: color 0.3s;
+    color: white;
+    margin: 0 10px;
 }
 
 .footer-link:hover {
@@ -377,7 +372,6 @@ h3{
     justify-content: space-between;
     transform: translateY(-50%);
 }
-
 .carousel-button {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -386,22 +380,11 @@ h3{
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
 }
 
-.carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.footer-container {
-    display: flex;
-    justify-content: center;
-}
-
-.footer-link {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
 #calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -471,19 +454,6 @@ h3{
 }
 .carousel-slide.hidden {
     display: none;
-}
-
-.carousel-button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    position: absolute;
-    top: 50%;
-    z-index: 2;
 }
 
 .carousel-button.prev {
