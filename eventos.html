@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="img/pincel.png">
+</head>
+<body>
+    <header class="header">
+        <h1>Monitoria de Artes</h1>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="horario.html">Horário de Monitoria</a></li>
+            <li><a href="clube.html">Clube do Livro</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="sarau.html">Sarau</a></li> 
+        </ul>
+    </nav>
+    <main class="section">
+        <h2>Eventos</h2>
+        <p>Organizamos diversos eventos para promover a criatividade e a interação cultural:</p>
+        <ul>
+            <li><strong>Sessões de cinema:</strong> Toda primeira sexta-feira do mês.</li>
+            <li><strong>Palestras:</strong> Convidamos artistas para compartilhar suas experiências.</li>
+            <li><strong>Festas Comemorativas:</strong>Festas como Festa Junina, halloween e etc. </li>
+            <li><strong>Workshops:</strong> Atividades práticas de música, pintura e muito mais.</li>
+        </ul>
+        <p>Olhando para abaixo da página temos o calendário dos eventos do colégio. Espero a participação de todos !!</p>
+        <hr class="custom-line">
+
+
+        <div id="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <span id="month-name"></span>
+            <button id="next-month">&gt;</button>
+        </div>
+        <div id="calendar"></div>
+        
+        <div id="calendar"></div>
+    </main>
+    <footer>
+        <div class="footer-container">
+          <div class="footer-links">
+            
+            <a href="https://wa.me/5519993786188" target="_blank" class="footer-link">WhatsApp |</a>
+            <a href="mailto:cc23580@g.unicamp.br" class="footer-link">E-mail |</a>
+            <a href="https://www.instagram.com/seuusuario/" target="_blank" class="footer-link">Instagram |</a>
+          </div>
+        </div>
+      </footer>
+    
+<script>
+    const calendarDiv = document.getElementById("calendar");
+const monthName = document.getElementById("month-name");
+const prevMonthBtn = document.getElementById("prev-month");
+const nextMonthBtn = document.getElementById("next-month");
+
+// Lista de nomes dos meses
+const monthNames = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+];
+
+// Eventos fixos
+const fixedEvents = [
+    { date: "2025-01-26", name: "Sessão de Cinema" },
+    { date: "2025-01-28", name: "Workshop de Pintura" },
+    { date: "2025-02-02", name: "Palestra com Artista" },
+];
+
+// Função para gerar o calendário
+function generateCalendar(year, month) {
+    calendarDiv.innerHTML = ""; // Limpa o calendário
+    const daysInMonth = new Date(year, month + 1, 0).getDate(); // Dias no mês
+    const firstDay = new Date(year, month, 1).getDay(); // Primeiro dia do mês
+
+    // Atualiza o nome do mês
+    monthName.textContent = `${monthNames[month]} ${year}`;
+
+    // Preenche os dias antes do mês começar
+    for (let i = 0; i < firstDay; i++) {
+        const emptyDiv = document.createElement("div");
+        calendarDiv.appendChild(emptyDiv);
+    }
+
+    // Preenche os dias do mês
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayDiv = document.createElement("div");
+        dayDiv.className = "day";
+        dayDiv.textContent = day;
+
+        // Marca o dia de hoje
+        const today = new Date();
+        if (
+            year === today.getFullYear() &&
+            month === today.getMonth() &&
+            day === today.getDate()
+        ) {
+            dayDiv.classList.add("today");
+        }
+
+        // Adiciona eventos fixos
+        const eventDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        const eventsForDay = fixedEvents.filter(event => event.date === eventDate);
+        eventsForDay.forEach(event => {
+            const eventDiv = document.createElement("div");
+            eventDiv.className = "event";
+            eventDiv.textContent = event.name;
+            dayDiv.appendChild(eventDiv);
+        });
+
+        calendarDiv.appendChild(dayDiv);
+    }
+}
+
+// Navegação entre meses
+let currentYear = new Date().getFullYear();
+let currentMonth = new Date().getMonth();
+
+prevMonthBtn.addEventListener("click", () => {
+    currentMonth--;
+    if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+    }
+    generateCalendar(currentYear, currentMonth);
+});
+
+nextMonthBtn.addEventListener("click", () => {
+    currentMonth++;
+    if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+    }
+    generateCalendar(currentYear, currentMonth);
+});
+
+// Inicializa o calendário no mês atual
+generateCalendar(currentYear, currentMonth);
+
+</script>
+
+</body>
+</html>
