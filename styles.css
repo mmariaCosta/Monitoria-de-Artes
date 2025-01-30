@@ -6,6 +6,7 @@ body {
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden; /* Impede rolagem horizontal global */
 }
 
 /* Cabeçalho */
@@ -154,6 +155,7 @@ form button:hover {
 .grade-horarios {
     margin-top: 20px;
     text-align: center;
+    overflow-x: auto; /* Permite rolagem horizontal apenas na tabela */
 }
 
 table {
@@ -179,6 +181,7 @@ table tbody td {
     background-color: #f0f8ff; /* Azul claro */
 }
 
+/* Anotações */
 .anotacoes {
     display: flex;
     justify-content: left;
@@ -205,6 +208,7 @@ table tbody td {
     border-radius: 5px;
     line-height: 1.5;
 }
+
 /* Galeria de Polaroids */
 .polaroid-gallery {
     display: flex;
@@ -244,72 +248,7 @@ table tbody td {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 1px 10px 17px rgba(0, 0, 0, 0.3);
 }
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
 
-.footer-links {
-    display: flex; /* Organiza os links em linha */
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Espaço entre os links */
-}
-
-.footer-link {
-    text-decoration: none;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.3s;
-    color: white;
-    margin: 0 10px;
-}
-
-.footer-link:hover {
-    color: #8ecae6; /* Azul claro */
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-}
-
-h3{
-    text-align: center;
-}
-
-#moni{
-    background-color: #003366;
-    color:#ffff;
-}   
-.code-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px; /* Espaço entre o texto e o QR code */
-    border: 1px solid #ccc; /* Opcional: borda ao redor do contêiner */
-    padding: 10px; /* Espaçamento interno */
-    max-width: 400px; /* Limitar a largura do contêiner */
-    margin: 20px auto; /* Centralizar na página */
-    background-color: #f9f9f9; /* Fundo leve para destaque */
-    border-radius: 8px; /* Bordas arredondadas */
-}
-
-.code-container img {
-    flex-shrink: 0; /* Impede que o QR code seja redimensionado */
-    max-width: 100px;
-    max-height: 100px;
-}
-
-.code-container p {
-    margin: 0;
-    font-size: 15px; /* Tamanho de texto ajustável */
-}
 /* Estilo do carrossel */
 .carousel {
     width: 80%;
@@ -372,6 +311,7 @@ h3{
     justify-content: space-between;
     transform: translateY(-50%);
 }
+
 .carousel-button {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -380,11 +320,13 @@ h3{
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
-    position: absolute;
-    top: 50%;
-    z-index: 2;
 }
 
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Calendário */
 #calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -419,6 +361,7 @@ h3{
     font-size: 12px;
     font-weight: bold;
 }
+
 #calendar-header {
     display: flex;
     justify-content: center;
@@ -444,6 +387,8 @@ h3{
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+/* Linha customizada */
 .custom-line {
     border: none;
     border-top: 2px solid #000000; /* Cor e espessura da linha */
@@ -452,18 +397,42 @@ h3{
     margin-left: auto;
     margin-right: auto; /* Centraliza */
 }
-.carousel-slide.hidden {
-    display: none;
+
+/* Responsividade para a grade de horários */
+@media (max-width: 768px) {
+    table thead th,
+    table tbody td {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        padding: 8px; /* Ajusta o espaçamento das células */
+    }
+
+    .grade-horarios {
+        padding: 0 15px; /* Ajuste de padding lateral */
+    }
 }
 
-.carousel-button.prev {
-    left: 10px;
+/* Para telas menores (exemplo: celulares) */
+@media (max-width: 480px) {
+    table thead th,
+    table tbody td {
+        font-size: 12px; /* Tamanho de fonte ainda menor */
+        padding: 6px; /* Ajusta o espaçamento para celulares */
+    }
+
+    .grade-horarios {
+        padding: 0 10px; /* Mais ajuste de padding para telas pequenas */
+    }
 }
 
-.carousel-button.next {
-    right: 10px;
-}
+/* Para telas muito pequenas (exemplo: smartphones pequenos) */
+@media (max-width: 320px) {
+    table thead th,
+    table tbody td {
+        font-size: 10px; /* Diminui ainda mais a fonte para telas muito pequenas */
+        padding: 4px; /* Reduz ainda mais o espaçamento */
+    }
 
-.carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    .grade-horarios {
+        padding: 0 5px; /* Ajuste fino para a tabela */
+    }
 }
