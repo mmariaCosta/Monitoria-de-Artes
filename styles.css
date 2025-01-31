@@ -987,4 +987,6 @@ table tbody td {
     box-sizing: border-box;
 }
 
-
+#link-livro{
+    color:rgb(128, 85, 192);
+}
