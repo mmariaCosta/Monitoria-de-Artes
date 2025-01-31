@@ -39,6 +39,7 @@ body {
 
 .menu li {
     margin: 0 15px;
+    text-align: center;
 }
 
 .menu a {
