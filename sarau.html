@@ -22,53 +22,49 @@
     </nav>
     <main class="section">
         <h2>Sarau</h2>
-        
         <h3>Sarau do mês de Março:</h3>
-        <p>Fotos tiradas dos nosso mini cantores desse mês! Foram sensasionais! Amo como o nosso colégio é embolgado
-            para descubrir novos talendos músicais. Desejo tudo de bom para os corajosos que subiram no palco!.
-        </p>
+        <p>Fotos tiradas dos nossos mini cantores desse mês! Foram sensacionais! Amo como o nosso colégio é empolgado para descobrir novos talentos musicais. Desejo tudo de bom para os corajosos que subiram no palco!</p>
         <div class="polaroid-gallery">
             <div class="polaroid">
-                <img src="img/canada.jpg" alt="Apresentação artística">
+                <img src="img/canada.jpg" alt="Apresentação artística" class="zoom-img">
                 <p>Apresentação artística</p>
             </div>
             <div class="polaroid">
-                <img src="img/canada2.jpeg" alt="Poesia em destaque">
+                <img src="img/canada2.jpeg" alt="Poesia em destaque" class="zoom-img">
                 <p>Poesia em destaque</p>
             </div>
             <div class="polaroid">
-                <img src="img/canada3.webp" alt="Performance teatral">
-                <p>Performance teatral</p>
-            </div>
-        </div>
-
-        <h3>Sarau do mês de Abril:</h3>
-        <p>Fotos tiradas dos nosso mini cantores desse mês! Foram sensasionais! Amo como o nosso colégio é embolgado
-            para descubrir novos talendos músicais. Desejo tudo de bom para os corajosos que subiram no palco!.</p>
-        <div class="polaroid-gallery">
-            <div class="polaroid">
-                <img src="img/canada.jpg" alt="Apresentação artística">
-                <p>Apresentação artística</p>
-            </div>
-            <div class="polaroid">
-                <img src="img/canada2.jpeg" alt="Poesia em destaque">
-                <p>Poesia em destaque</p>
-            </div>
-            <div class="polaroid">
-                <img src="img/canada3.webp" alt="Performance teatral">
+                <img src="img/canada3.webp" alt="Performance teatral" class="zoom-img">
                 <p>Performance teatral</p>
             </div>
         </div>
     </main>
     <footer>
         <div class="footer-container">
-          <div class="footer-links">
-            
-            <a href="https://wa.me/5519993786188" target="_blank" class="footer-link">WhatsApp |</a>
-            <a href="mailto:cc23580@g.unicamp.br" class="footer-link">E-mail |</a>
-            <a href="https://www.instagram.com/moni_aaaartes/" target="_blank" class="footer-link">Instagram |</a>
-          </div>
+            <div class="footer-links">
+                <a href="https://wa.me/5519993786188" target="_blank" class="footer-link">WhatsApp |</a>
+                <a href="mailto:cc23580@g.unicamp.br" class="footer-link">E-mail |</a>
+                <a href="https://www.instagram.com/moni_aaaartes/" target="_blank" class="footer-link">Instagram |</a>
+            </div>
         </div>
-      </footer>
+    </footer>
+    
+    <div class="modal" id="imageModal">
+        <span class="close" id="closeModal">&times;</span>
+        <img id="modalImage" src="" alt="Imagem ampliada">
+    </div>
+    
+    <script>
+        document.querySelectorAll('.zoom-img').forEach(img => {
+            img.addEventListener('click', function() {
+                document.getElementById('modalImage').src = this.src;
+                document.getElementById('imageModal').style.display = 'flex';
+            });
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('imageModal').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
