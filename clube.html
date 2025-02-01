@@ -22,16 +22,19 @@
     </nav>
     <main class="section">
         <h2>Clube do Livro</h2>
+        <h3>✨ Escolha o Livro do Próximo Mês! ✨ </h3>
+        <p> Estamos com algumas opções de livros para o próximo mês e queremos saber
+             a sua opinião! Clique na imagem do livro e confira a sinopse. Em seguida, 
+             participe da nossa enquete e ajude a escolher a leitura que vamos explorar juntos!.</p>
+
         <div class="carousel">
             <div class="carousel-track">
                 <div class="carousel-slide current">
                     <img src="img/livro.png" alt="Capa do livro Orgulho e Preconceito">
                     <div class="carousel-info">
                         <h3>Orgulho e Preconceito</h3>
-                        <p>
-                            Orgulho e Preconceito é o livro mais famoso de Jane Austen. A obra
-                            apresenta Elizabeth Bennet em seu confronto com o reservado Sr. Darcy,
-                            enquanto aspectos sociais e culturais são explorados de forma encantadora.
+                        <p class="sinopse">
+                            Orgulho e Preconceito é o livro mais famoso de Jane Austen. A obra apresenta Elizabeth Bennet em seu confronto com o reservado Sr. Darcy, enquanto aspectos sociais e culturais são explorados de forma encantadora.
                         </p>
                     </div>
                 </div>
@@ -39,21 +42,18 @@
                     <img src="img/aurora.webp" alt="Capa do livro">
                     <div class="carousel-info">
                         <h3>Livro Exemplo 2</h3>
-                        <p>Tudo o que eu queria ao ir para Las Vegas, era tirar da cabeça do meu irmão a ideia de que eu era careta, além de tirar da minha cabeça a imagem do convite de casamento que recebi da minha ex-namorada.
-                            Mas tudo isso se tornou uma péssima ideia, quando no dia seguinte, acordei ao lado de uma mulher desconhecida, com uma aliança no dedo e uma certidão de casamento.
-                            Não deveria ter ido a Vegas. Não deveria ter dado corda ao idiota do meu irmão e tomado aquele copo de whisky batizado. Não deveria ter casado com aquele pedaço de loucura.
-                            Aurora Castelo é o nome dela. A mulher mais linda que eu já vi, mas também é a mais trapaceira, mentirosa e golpista que já passou pela minha vida, e olha que sou um magnata do ramo imobiliário e várias pessoas já tentaram me passar a perna.
-                            Nenhuma teve tanto sucesso igual a ela.
-                            Ela precisa de um visto para ficar no país, e não me deu a anulação. Eu preciso que ela assine o divórcio sem levar nada meu. Agora, vou precisar ficar casado com uma mulher, dezenove anos mais nova, insanamente gostosa, com a boca mais atrevida que eu já vi, por seis meses.
-                            E que Deus me ajude a sobreviver a eles.</p>
+                        <p class="sinopse">
+                            Tudo o que eu queria ao ir para Las Vegas, era tirar da cabeça do meu irmão a ideia de que eu era careta, além de tirar da minha cabeça a imagem do convite de casamento que recebi da minha ex-namorada. Mas tudo isso se tornou uma péssima ideia, quando no dia seguinte, acordei ao lado de uma mulher desconhecida, com uma aliança no dedo e uma certidão de casamento. Não deveria ter ido a Vegas. Não deveria ter dado corda ao idiota do meu irmão e tomado aquele copo de whisky batizado. Não deveria ter casado com aquele pedaço de loucura. Aurora Castelo é o nome dela. A mulher mais linda que eu já vi, mas também é a mais trapaceira, mentirosa e golpista que já passou pela minha vida, e olha que sou um magnata do ramo imobiliário e várias pessoas já tentaram me passar a perna. Nenhuma teve tanto sucesso igual a ela. Ela precisa de um visto para ficar no país, e não me deu a anulação. Eu preciso que ela assine o divórcio sem levar nada meu. Agora, vou precisar ficar casado com uma mulher, dezenove anos mais nova, insanamente gostosa, com a boca mais atrevida que eu já vi, por seis meses. E que Deus me ajude a sobreviver a eles.
+                        </p>
                     </div>
                 </div>
                 <div class="carousel-slide">
                     <img src="img/lagrimas.jpg" alt="Capa do livro">
                     <div class="carousel-info">
                         <h3>O Fabricante de Lágrimas</h3>
-                        <p>Nica cresceu em um orfanato e os contos de fada eram seu único conforto em meio aos terrores reais que assombravam os corredores da instituição. Agora que é adolescente, escolheu deixar as fantasias infantis para trás e focar no seu sonho de ser adotada.
-                        Mas, quando o sr. e a sra. Milligan adotam Nica, para a surpresa dela, também decidem acolher Rigel, um misterioso e inteligente garoto que nunca se deixou ser adotado… até agora. E, apesar de ambos compartilharem o mesmo passado, a convivência não será nada fácil ― ainda mais porque Rigel aproveita qualquer oportunidade para relembrá-la do quanto a despreza.</p>
+                        <p class="sinopse">
+                            Nica cresceu em um orfanato e os contos de fada eram seu único conforto em meio aos terrores reais...
+                        </p>
                     </div>
                 </div>
             </div>
@@ -62,20 +62,25 @@
                 <button class="carousel-button next">❯</button>
             </div>
         </div>
+
         <div id="code" class="code-container">
             <p><strong>Acesse aqui o forms para participar da enquete de livro escolhido para o próximo mês.</strong></p>
             <a id="link-livro" href="https://forms.gle/ozFjBPTTCQjXrERt7">Acesse aqui a enquete</a>
         </div>
+        
     </main>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-links">
-                <a href="https://wa.me/5519993786188" target="_blank" class="footer-link">WhatsApp |</a>
-                <a href="mailto:cc23580@g.unicamp.br" class="footer-link">E-mail |</a>
-                <a href="https://www.instagram.com/moni_aaaartes/" target="_blank" class="footer-link">Instagram |</a>
-            </div>
+    
+    
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modal-img" src="" alt="Capa do Livro">
+            <h3 id="modal-title"></h3>
+            <p id="modal-sinopse"></p>
         </div>
-    </footer>
+    </div>
+
     <script>
         const track = document.querySelector('.carousel-track');
         const slides = Array.from(track.children);
@@ -104,6 +109,37 @@
             const currentSlide = track.querySelector('.current');
             const prevSlide = currentSlide.previousElementSibling;
             if (prevSlide) moveToSlide(track, currentSlide, prevSlide);
+        });
+
+        // Modal
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalSinopse = document.getElementById('modal-sinopse');
+        const closeModal = document.querySelector('.close-btn');
+
+        slides.forEach(slide => {
+            slide.addEventListener('click', () => {
+                const imgSrc = slide.querySelector('img').src;
+                const title = slide.querySelector('h3').textContent;
+                const sinopse = slide.querySelector('.sinopse').textContent;
+
+                modalImg.src = imgSrc;
+                modalTitle.textContent = title;
+                modalSinopse.textContent = sinopse;
+
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
         });
     </script>
 </body>
