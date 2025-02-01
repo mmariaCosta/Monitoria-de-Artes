@@ -981,6 +981,13 @@ table tbody td {
     object-fit: cover;
     border-radius: 5px;
 }
+#modalImage {
+    width: 60%;
+    max-height: 60%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
 
 .modal h3 {
     margin-top: 10px;
