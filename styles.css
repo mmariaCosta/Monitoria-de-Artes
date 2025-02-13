@@ -58,6 +58,17 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    #calendar {
+        grid-template-columns: repeat(7, minmax(30px, 1fr)); /* Mantém colunas pequenas */
+    }
+
+    .day {
+        padding: 5px; /* Reduz o espaçamento para telas menores */
+        font-size: 14px;
+    }
 }
 
 .section h2 {
@@ -802,13 +813,6 @@ table tbody td {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-#calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    max-width: 800px;
-    margin: 20px auto;
-}
 
 .day {
     padding: 10px;
@@ -835,6 +839,14 @@ table tbody td {
     padding: 2px;
     font-size: 12px;
     font-weight: bold;
+}
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    max-width: 100%;  /* Garante que o calendário não ultrapasse o container */
+    overflow-x: auto;  /* Adiciona rolagem horizontal se necessário */
+    margin: 20px auto;
 }
 
 #calendar-header {
