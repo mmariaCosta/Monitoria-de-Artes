@@ -801,13 +801,29 @@ table tbody td {
 .carousel-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 #calendar {
+    width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
-    max-width: 800px;
-    margin: 20px auto;
+    box-sizing: border-box;
+}
+.container {
+    overflow: hidden; /* Evita que o conteúdo ultrapasse */
+    max-width: 100%;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    #calendar {
+        grid-template-columns: repeat(7, minmax(30px, 1fr));
+    }
+
+    .day {
+        font-size: 12px; /* Diminui o tamanho do texto */
+        padding: 5px;
+    }
 }
 
 .day {
